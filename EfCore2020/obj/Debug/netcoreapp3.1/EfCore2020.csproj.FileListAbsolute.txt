@@ -1,0 +1,10 @@
+C:\Users\sturcu\Desktop\facultate\tsp.net\TSP.NET\EfCore2020\bin\Debug\netcoreapp3.1\EfCore2020.deps.json
+C:\Users\sturcu\Desktop\facultate\tsp.net\TSP.NET\EfCore2020\bin\Debug\netcoreapp3.1\EfCore2020.runtimeconfig.json
+C:\Users\sturcu\Desktop\facultate\tsp.net\TSP.NET\EfCore2020\bin\Debug\netcoreapp3.1\EfCore2020.runtimeconfig.dev.json
+C:\Users\sturcu\Desktop\facultate\tsp.net\TSP.NET\EfCore2020\bin\Debug\netcoreapp3.1\EfCore2020.dll
+C:\Users\sturcu\Desktop\facultate\tsp.net\TSP.NET\EfCore2020\bin\Debug\netcoreapp3.1\EfCore2020.pdb
+C:\Users\sturcu\Desktop\facultate\tsp.net\TSP.NET\EfCore2020\obj\Debug\netcoreapp3.1\EfCore2020.AssemblyInfoInputs.cache
+C:\Users\sturcu\Desktop\facultate\tsp.net\TSP.NET\EfCore2020\obj\Debug\netcoreapp3.1\EfCore2020.AssemblyInfo.cs
+C:\Users\sturcu\Desktop\facultate\tsp.net\TSP.NET\EfCore2020\obj\Debug\netcoreapp3.1\EfCore2020.dll
+C:\Users\sturcu\Desktop\facultate\tsp.net\TSP.NET\EfCore2020\obj\Debug\netcoreapp3.1\EfCore2020.pdb
+C:\Users\sturcu\Desktop\facultate\tsp.net\TSP.NET\EfCore2020\obj\Debug\netcoreapp3.1\EfCore2020.csprojAssemblyReference.cache

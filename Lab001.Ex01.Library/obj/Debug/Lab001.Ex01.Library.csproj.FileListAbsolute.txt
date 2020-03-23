@@ -1,5 +1,0 @@
-C:\Users\sturcu\Desktop\facultate\tsp.net\TSP.NET\Lab001.Ex01.Library\bin\Debug\Lab001.Ex01.Library.dll
-C:\Users\sturcu\Desktop\facultate\tsp.net\TSP.NET\Lab001.Ex01.Library\bin\Debug\Lab001.Ex01.Library.pdb
-C:\Users\sturcu\Desktop\facultate\tsp.net\TSP.NET\Lab001.Ex01.Library\obj\Debug\Lab001.Ex01.Library.csprojAssemblyReference.cache
-C:\Users\sturcu\Desktop\facultate\tsp.net\TSP.NET\Lab001.Ex01.Library\obj\Debug\Lab001.Ex01.Library.dll
-C:\Users\sturcu\Desktop\facultate\tsp.net\TSP.NET\Lab001.Ex01.Library\obj\Debug\Lab001.Ex01.Library.pdb

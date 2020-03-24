@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lab003", "lab003", "{6DF5A660-A61D-4566-9332-7DC1FF398ACB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelDesignFirst", "lab003\ModelDesignFirst\ModelDesignFirst.csproj", "{9E0668F0-6D1B-405D-AF98-D6EACA7C9F1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E0668F0-6D1B-405D-AF98-D6EACA7C9F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E0668F0-6D1B-405D-AF98-D6EACA7C9F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E0668F0-6D1B-405D-AF98-D6EACA7C9F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E0668F0-6D1B-405D-AF98-D6EACA7C9F1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9E0668F0-6D1B-405D-AF98-D6EACA7C9F1C} = {6DF5A660-A61D-4566-9332-7DC1FF398ACB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CFA3652-983B-4427-A35C-ACAC5D32BB61}
+	EndGlobalSection
+EndGlobal

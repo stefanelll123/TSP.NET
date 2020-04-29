@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Windows.Forms;
-using MyPhotos.DataAccess.Api;
+using MyPhotos.DataAccess.Gui.ServiceReference1;
 
 namespace MyPhotos.DataAccess.Gui.Event
 {
     public partial class EditEvent : Form
     {
-        private readonly IRepository<Model.Models.Event> _repository;
-        private readonly Model.Models.Event _type;
+        private readonly ServiceImplementationClient _service;
+        private readonly ServiceReference1.Event _type;
 
-        public EditEvent(IRepository<Model.Models.Event> repository, Model.Models.Event type)
+        public EditEvent(ServiceImplementationClient service, ServiceReference1.Event type)
         {
-            _repository = repository;
+            _service = service;
             _type = type;
             InitializeComponent();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            _repository.Update(_type, new Model.Models.Event()
+            _service.UpdateEvent(_type, new ServiceReference1.Event()
             {
                 Name = tbName.Text,
             });

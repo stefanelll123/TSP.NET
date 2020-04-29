@@ -168,7 +168,7 @@
             // 
             // photosBindingSource
             // 
-            this.photosBindingSource.DataSource = typeof(MyPhotos.DataAccess.Model.Models.Photos);
+            this.photosBindingSource.DataSource = typeof(ServiceReference1.Photos);
             // 
             // PhotoControl
             // 

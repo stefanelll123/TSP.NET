@@ -6,29 +6,29 @@ using MyPhotos.WcfServices.Contracts;
 
 namespace MyPhotos.WcfServices.Services
 {
-    public partial class ServiceImplementation : IPhotoService
+    public partial class ServiceImplementation
     {
-        void IPhotoService.Add(Photos entity)
+        public void AddPhoto(Photos entity)
         {
             _photoRepository.Add(entity);
         }
 
-        ICollection<Photos> IPhotoService.GetAll()
+        public ICollection<Photos> GetAllPhotos()
         {
             return _photoRepository.GetAll();
         }
 
-        Photos IPhotoService.GetById(Guid id)
+        public Photos GetPhotoById(Guid id)
         {
             return _photoRepository.GetById(id);
         }
 
-        void IPhotoService.Update(Photos oldEntity, Photos newEntity)
+        public void UpdatePhoto(Photos oldEntity, Photos newEntity)
         {
             _photoRepository.Update(oldEntity, newEntity);
         }
 
-        void IPhotoService.Delete(Guid id)
+        public void DeletePhoto(Guid id)
         {
             _photoRepository.Delete(id);
         }

@@ -5,22 +5,21 @@ using Type = MyPhotos.DataAccess.Model.Models.Type;
 
 namespace MyPhotos.WcfServices.Contracts
 {
-    [ServiceContract]
-    public interface ITypeService
+    public partial interface IServiceImplementation
     {
         [OperationContract]
-        void Add(Type entity);
+        void AddType(Type entity);
 
         [OperationContract]
-        ICollection<Type> GetAll();
+        ICollection<Type> GetAllTypes();
 
         [OperationContract]
-        Type GetById(Guid id);
+        Type GetTypeById(Guid id);
 
         [OperationContract]
-        void Update(Type oldEntity, Type newEntity);
+        void UpdateType(Type oldEntity, Type newEntity);
 
         [OperationContract]
-        void Delete(Guid id);
+        void DeleteType(Guid id);
     }
 }

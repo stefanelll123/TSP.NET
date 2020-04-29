@@ -169,19 +169,19 @@
             // 
             // personBindingSource
             // 
-            this.personBindingSource.DataSource = typeof(MyPhotos.DataAccess.Model.Models.Person);
+            this.personBindingSource.DataSource = typeof(ServiceReference1.Person);
             // 
             // placesBindingSource
             // 
-            this.placesBindingSource.DataSource = typeof(MyPhotos.DataAccess.Model.Models.Places);
+            this.placesBindingSource.DataSource = typeof(ServiceReference1.Places);
             // 
             // typeBindingSource
             // 
-            this.typeBindingSource.DataSource = typeof(MyPhotos.DataAccess.Model.Models.Type);
+            this.typeBindingSource.DataSource = typeof(ServiceReference1.Type);
             // 
             // eventBindingSource
             // 
-            this.eventBindingSource.DataSource = typeof(MyPhotos.DataAccess.Model.Models.Event);
+            this.eventBindingSource.DataSource = typeof(ServiceReference1.Event);
             // 
             // openFileDialog1
             // 

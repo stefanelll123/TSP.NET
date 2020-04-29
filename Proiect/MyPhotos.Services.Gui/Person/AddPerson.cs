@@ -1,24 +1,23 @@
 ﻿using System;
 using System.Windows.Forms;
-
-using MyPhotos.DataAccess.Api;
+using MyPhotos.DataAccess.Gui.ServiceReference1;
 
 namespace MyPhotos.DataAccess.Gui.Person
 {
     public partial class AddPerson : Form
     {
-        private readonly IRepository<Model.Models.Person> _repository;
+        private readonly ServiceImplementationClient _service;
 
-        public AddPerson(IRepository<Model.Models.Person> repository)
+        public AddPerson(ServiceImplementationClient service)
         {
-            _repository = repository;
+            _service = service;
             InitializeComponent();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            _repository.Add(
-                new Model.Models.Person
+            _service.AddPerson(
+                new ServiceReference1.Person
                 {
                     Id = Guid.NewGuid(),
                     FirstName = tbFirstName.Text,

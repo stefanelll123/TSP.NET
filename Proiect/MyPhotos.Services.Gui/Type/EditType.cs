@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
-using MyPhotos.DataAccess.Api;
+using MyPhotos.DataAccess.Gui.ServiceReference1;
 
 namespace MyPhotos.DataAccess.Gui.Type
 {
     public partial class EditType : Form
     {
-        private readonly IRepository<Model.Models.Type> _repository;
-        private readonly Model.Models.Type _type;
+        private readonly ServiceImplementationClient _repository;
+        private readonly ServiceReference1.Type _type;
 
-        public EditType(IRepository<Model.Models.Type> repository, Model.Models.Type type)
+        public EditType(ServiceImplementationClient repository, ServiceReference1.Type type)
         {
             _repository = repository;
             _type = type;
@@ -18,7 +18,7 @@ namespace MyPhotos.DataAccess.Gui.Type
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            _repository.Update(_type, new Model.Models.Type()
+            _repository.UpdateType(_type, new ServiceReference1.Type()
             {
                 Name = tbName.Text,
             });

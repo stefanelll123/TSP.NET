@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E69F479F-53C2-4B9E-A597-B30D6C1B5917}</ProjectGuid>
+    <ProjectGuid>{0DCBD102-EDCA-4C18-9390-4547174E8828}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>MyPhotos.DataAccess.Gui</RootNamespace>
     <AssemblyName>MyPhotos.DataAccess.Gui</AssemblyName>
@@ -45,6 +45,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,35 +58,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PhotoControl.cs">
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="EventControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PhotoControl.Designer.cs">
-      <DependentUpon>PhotoControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Photos\AddPhoto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Photos\AddPhoto.Designer.cs">
-      <DependentUpon>AddPhoto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Place\AddPlace.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Place\AddPlace.Designer.cs">
-      <DependentUpon>AddPlace.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Place\EditPlace.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Place\EditPlace.Designer.cs">
-      <DependentUpon>EditPlace.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="EventControl.Designer.cs">
+      <DependentUpon>EventControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Event\AddEvent.cs">
       <SubType>Form</SubType>
@@ -98,35 +81,17 @@
     <Compile Include="Event\EditEvent.Designer.cs">
       <DependentUpon>EditEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="EventControl.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EventControl.Designer.cs">
-      <DependentUpon>EventControl.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlaceControl.cs">
+    <Compile Include="PersonControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PlaceControl.Designer.cs">
-      <DependentUpon>PlaceControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Type\AddType.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Type\AddType.Designer.cs">
-      <DependentUpon>AddType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Type\EditType.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Type\EditType.Designer.cs">
-      <DependentUpon>EditType.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TypeControl.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TypeControl.Designer.cs">
-      <DependentUpon>TypeControl.cs</DependentUpon>
+    <Compile Include="PersonControl.Designer.cs">
+      <DependentUpon>PersonControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Person\AddPerson.cs">
       <SubType>Form</SubType>
@@ -140,28 +105,58 @@
     <Compile Include="Person\EditPerson.Designer.cs">
       <DependentUpon>EditPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PersonControl.cs">
+    <Compile Include="PhotoControl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PersonControl.Designer.cs">
-      <DependentUpon>PersonControl.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="PhotoControl.resx">
+    <Compile Include="PhotoControl.Designer.cs">
       <DependentUpon>PhotoControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Photos\AddPhoto.resx">
+    </Compile>
+    <Compile Include="Photos\AddPhoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Photos\AddPhoto.Designer.cs">
       <DependentUpon>AddPhoto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Place\AddPlace.resx">
+    </Compile>
+    <Compile Include="PlaceControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlaceControl.Designer.cs">
+      <DependentUpon>PlaceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Place\AddPlace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Place\AddPlace.Designer.cs">
       <DependentUpon>AddPlace.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Place\EditPlace.resx">
+    </Compile>
+    <Compile Include="Place\EditPlace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Place\EditPlace.Designer.cs">
       <DependentUpon>EditPlace.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TypeControl.Designer.cs">
+      <DependentUpon>TypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Type\AddType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Type\AddType.Designer.cs">
+      <DependentUpon>AddType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Type\EditType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Type\EditType.Designer.cs">
+      <DependentUpon>EditType.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EventControl.resx">
+      <DependentUpon>EventControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Event\AddEvent.resx">
       <DependentUpon>AddEvent.cs</DependentUpon>
@@ -169,26 +164,32 @@
     <EmbeddedResource Include="Event\EditEvent.resx">
       <DependentUpon>EditEvent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EventControl.resx">
-      <DependentUpon>EventControl.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PlaceControl.resx">
-      <DependentUpon>PlaceControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Type\AddType.resx">
-      <DependentUpon>AddType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Type\EditType.resx">
-      <DependentUpon>EditType.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TypeControl.resx">
-      <DependentUpon>TypeControl.cs</DependentUpon>
+    <EmbeddedResource Include="PersonControl.resx">
+      <DependentUpon>PersonControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Person\AddPerson.resx">
       <DependentUpon>AddPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Person\EditPerson.resx">
       <DependentUpon>EditPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhotoControl.resx">
+      <DependentUpon>PhotoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Photos\AddPhoto.resx">
+      <DependentUpon>AddPhoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlaceControl.resx">
+      <DependentUpon>PlaceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Place\AddPlace.resx">
+      <DependentUpon>AddPlace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Place\EditPlace.resx">
+      <DependentUpon>EditPlace.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -199,9 +200,40 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="PersonControl.resx">
-      <DependentUpon>PersonControl.cs</DependentUpon>
+    <EmbeddedResource Include="TypeControl.resx">
+      <DependentUpon>TypeControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Type\AddType.resx">
+      <DependentUpon>AddType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Type\EditType.resx">
+      <DependentUpon>EditType.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Connected Services\ServiceReference1\MyPhotos.DataAccess.Gui.ServiceReference1.Event.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\MyPhotos.DataAccess.Gui.ServiceReference1.Person.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\MyPhotos.DataAccess.Gui.ServiceReference1.Photos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\MyPhotos.DataAccess.Gui.ServiceReference1.Places.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\MyPhotos.DataAccess.Gui.ServiceReference1.Type.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\MyPhotos.DataAccess.Model.Models.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\service.wsdl" />
+    <None Include="Connected Services\ServiceReference1\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\MyPhotos.DataAccess.Model.Models.Event.datasource" />
     <None Include="Properties\DataSources\MyPhotos.DataAccess.Model.Models.Person.datasource" />
@@ -221,7 +253,31 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyPhotos.WcfServices\MyPhotos.WcfServices.csproj">
+      <Project>{02AB7E09-1374-4CAA-A31B-5EEEE865E521}</Project>
+      <Name>MyPhotos.WcfServices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

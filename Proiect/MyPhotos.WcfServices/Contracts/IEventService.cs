@@ -5,22 +5,21 @@ using MyPhotos.DataAccess.Model.Models;
 
 namespace MyPhotos.WcfServices.Contracts
 {
-    [ServiceContract]
-    public interface IEventService
+    public partial interface IServiceImplementation
     {
         [OperationContract]
-        void Add(Event entity);
+        void AddEvent(Event entity);
 
         [OperationContract]
-        ICollection<Event> GetAll();
+        ICollection<Event> GetAllEvents();
 
         [OperationContract]
-        Event GetById(Guid id);
+        Event GetEventById(Guid id);
 
         [OperationContract]
-        void Update(Event oldEntity, Event newEntity);
+        void UpdateEvent(Event oldEntity, Event newEntity);
 
         [OperationContract]
-        void Delete(Guid id);
+        void DeleteEvent(Guid id);
     }
 }

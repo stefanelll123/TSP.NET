@@ -2,33 +2,32 @@
 using System.Collections.Generic;
 
 using MyPhotos.DataAccess.Model.Models;
-using MyPhotos.WcfServices.Contracts;
 
 namespace MyPhotos.WcfServices.Services
 {
-    public partial class ServiceImplementation : IEventService
+    public partial class ServiceImplementation
     {
-        void IEventService.Add(Event entity)
+        public void AddEvent(Event entity)
         {
             _eventRepository.Add(entity);
         }
 
-        ICollection<Event> IEventService.GetAll()
+        public ICollection<Event> GetAllEvents()
         {
             return _eventRepository.GetAll();
         }
 
-        Event IEventService.GetById(Guid id)
+        public Event GetEventById(Guid id)
         {
             return _eventRepository.GetById(id);
         }
 
-        void IEventService.Update(Event oldEntity, Event newEntity)
+        public void UpdateEvent(Event oldEntity, Event newEntity)
         {
             _eventRepository.Update(oldEntity, newEntity);
         }
 
-        void IEventService.Delete(Guid id)
+        public void DeleteEvent(Guid id)
         {
             _eventRepository.Delete(id);
         }

@@ -1,19 +1,17 @@
 ﻿using System.Windows.Forms;
-using MyPhotos.DataAccess.Api;
-using MyPhotos.DataAccess.Api.Repositories;
 using MyPhotos.DataAccess.Gui.Person;
-using MyPhotos.DataAccess.Model.Models;
+using MyPhotos.DataAccess.Gui.ServiceReference1;
 
 namespace MyPhotos.DataAccess.Gui
 {
     public partial class PersonControl : Form
     {
-        private IRepository<Model.Models.Person> repository;
+        private ServiceImplementationClient service;
         
         public PersonControl()
         {
             InitializeComponent();
-            repository = new PersonRepository();
+            service = new ServiceImplementationClient();
         }
 
         private void ControlGenericForm_Load(object sender, System.EventArgs e)
@@ -23,29 +21,29 @@ namespace MyPhotos.DataAccess.Gui
 
         private void btnAdd_Click(object sender, System.EventArgs e)
         {
-            var addForm = new AddPerson(repository);
+            var addForm = new AddPerson(service);
             addForm.ShowDialog();
             Reload();
         }
 
         private void Reload()
         {
-            personBindingSource.DataSource = repository.GetAll();
+            personBindingSource.DataSource = service.GetAllPersons();
         }
 
         private void btnEdit_Click(object sender, System.EventArgs e)
         {
-            var row = dataGridView1.SelectedRows[0].DataBoundItem as Model.Models.Person;
-            var form = new EditPerson(repository, row);
+            var row = dataGridView1.SelectedRows[0].DataBoundItem as ServiceReference1.Person;
+            var form = new EditPerson(service, row);
             form.ShowDialog();
             Reload();
         }
 
         private void btnDelete_Click(object sender, System.EventArgs e)
         {
-            if (dataGridView1.SelectedRows[0].DataBoundItem is Model.Models.Person row)
+            if (dataGridView1.SelectedRows[0].DataBoundItem is ServiceReference1.Person row)
             {
-                repository.Delete(row.Id);
+                service.DeletePerson(row.Id);
             }
             Reload();
         }

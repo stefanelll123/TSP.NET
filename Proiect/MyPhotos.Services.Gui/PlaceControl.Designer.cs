@@ -117,7 +117,7 @@
             // 
             // placesBindingSource
             // 
-            this.placesBindingSource.DataSource = typeof(MyPhotos.DataAccess.Model.Models.Places);
+            this.placesBindingSource.DataSource = typeof(ServiceReference1.Places);
             // 
             // PlaceControl
             // 

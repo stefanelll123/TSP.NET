@@ -117,7 +117,7 @@
             // 
             // eventBindingSource
             // 
-            this.eventBindingSource.DataSource = typeof(MyPhotos.DataAccess.Model.Models.Event);
+            this.eventBindingSource.DataSource = typeof(ServiceReference1.Event);
             // 
             // EventControl
             // 

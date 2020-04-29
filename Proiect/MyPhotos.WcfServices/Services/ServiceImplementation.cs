@@ -1,10 +1,11 @@
 ﻿using MyPhotos.DataAccess.Api;
 using MyPhotos.DataAccess.Api.Repositories;
 using MyPhotos.DataAccess.Model.Models;
+using MyPhotos.WcfServices.Contracts;
 
 namespace MyPhotos.WcfServices.Services
 {
-    public partial class ServiceImplementation
+    public partial class ServiceImplementation : IServiceImplementation
     {
         private readonly IRepository<Type> _typeRepository;
         private readonly IRepository<Places> _placeRepository;

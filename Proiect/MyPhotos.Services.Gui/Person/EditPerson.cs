@@ -1,31 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MyPhotos.DataAccess.Api;
+using MyPhotos.DataAccess.Gui.ServiceReference1;
 
 namespace MyPhotos.DataAccess.Gui.Person
 {
     public partial class EditPerson : Form
     {
-        private readonly IRepository<Model.Models.Person> _repository;
-        private readonly Model.Models.Person _person;
+        private readonly ServiceImplementationClient _service;
+        private readonly ServiceReference1.Person _person;
 
-        public EditPerson(IRepository<Model.Models.Person> repository, Model.Models.Person person)
+        public EditPerson(ServiceImplementationClient service, ServiceReference1.Person person)
         {
-            _repository = repository;
+            _service = service;
             _person = person;
             InitializeComponent();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            _repository.Update(_person, new Model.Models.Person
+            _service.UpdatePerson(_person, new ServiceReference1.Person
             {
                 FirstName = tbFirstName.Text,
                 LastName = tbLastName.Text

@@ -1,41 +1,26 @@
 ﻿using System;
 using System.Windows.Forms;
-using MyPhotos.DataAccess.Api;
-using MyPhotos.DataAccess.Model.Models;
+using MyPhotos.DataAccess.Gui.ServiceReference1;
 
 namespace MyPhotos.DataAccess.Gui.Photos
 {
     public partial class AddPhoto : Form
     {
-        private readonly IPhotoRepository _repository;
-        private readonly IRepository<Model.Models.Type> _typeRepository;
-        private readonly IRepository<Model.Models.Event> _eventRepository;
-        private readonly IRepository<Model.Models.Person> _personRepository;
-        private readonly IRepository<Places> _placeRepository;
+        private readonly ServiceImplementationClient _service;
 
-        public AddPhoto(
-            IPhotoRepository repository,
-            IRepository<Model.Models.Type> typeRepository,
-            IRepository<Model.Models.Event> eventRepository,
-            IRepository<Model.Models.Person> personRepository,
-            IRepository<Model.Models.Places> placeRepository
-            )
+        public AddPhoto(ServiceImplementationClient service)
         {
-            _repository = repository;
-            _typeRepository = typeRepository;
-            _eventRepository = eventRepository;
-            _personRepository = personRepository;
-            _placeRepository = placeRepository;
+            _service = service;
 
             InitializeComponent();
         }
 
         private void AddPhoto_Load(object sender, System.EventArgs e)
         {
-            typeBindingSource.DataSource = _typeRepository.GetAll();
-            personBindingSource.DataSource = _personRepository.GetAll();
-            placesBindingSource.DataSource = _placeRepository.GetAll();
-            eventBindingSource.DataSource = _eventRepository.GetAll();
+            typeBindingSource.DataSource = _service.GetAllTypes();
+            personBindingSource.DataSource = _service.GetAllPersons();
+            placesBindingSource.DataSource = _service.GetAllPlaces();
+            eventBindingSource.DataSource = _service.GetAllEvents();
         }
 
         private void btnSelectFile_Click(object sender, System.EventArgs e)
@@ -46,7 +31,7 @@ namespace MyPhotos.DataAccess.Gui.Photos
 
         private void btnSave_Click(object sender, System.EventArgs e)
         {
-            var photo = new Model.Models.Photos
+            var photo = new ServiceReference1.Photos
             {
                 Id = Guid.NewGuid(),
                 Name = tbName.Text,
@@ -55,19 +40,19 @@ namespace MyPhotos.DataAccess.Gui.Photos
             };
 
 
-            var personId = ((Model.Models.Person) cbPersons.SelectedItem).Id;
-            photo.People.Add(_personRepository.GetById(personId));
+            var personId = ((ServiceReference1.Person) cbPersons.SelectedItem).Id;
+            photo.People[photo.People.Length] = _service.GetPersonById(personId);
 
-            var typeId = ((Model.Models.Type)cbTypes.SelectedItem).Id;
-            photo.Types.Add(_typeRepository.GetById(typeId));
+            var typeId = ((ServiceReference1.Type)cbTypes.SelectedItem).Id;
+            photo.Types[photo.Types.Length] = _service.GetTypeById(typeId);
 
-            var eventId = ((Model.Models.Event)cbEvent.SelectedItem).Id;
-            photo.Event = _eventRepository.GetById(eventId);
+            var eventId = ((ServiceReference1.Event)cbEvent.SelectedItem).Id;
+            photo.Event = _service.GetEventById(eventId);
 
-            var placeId = ((Model.Models.Places)cbPlaces.SelectedItem).Id;
-            photo.Places.Add(_placeRepository.GetById(placeId));
+            var placeId = ((Places)cbPlaces.SelectedItem).Id;
+            photo.Places[photo.Places.Length] = _service.GetPlaceById(placeId);
 
-            _repository.Add(photo);
+            _service.AddPhoto(photo);
             Close();
         }
     }

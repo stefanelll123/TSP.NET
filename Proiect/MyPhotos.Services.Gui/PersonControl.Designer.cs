@@ -125,7 +125,7 @@
             // 
             // personBindingSource
             // 
-            this.personBindingSource.DataSource = typeof(MyPhotos.DataAccess.Model.Models.Person);
+            this.personBindingSource.DataSource = typeof(ServiceReference1.Person);
             // 
             // PersonControl
             // 

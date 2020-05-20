@@ -1,0 +1,16 @@
+﻿@page "/places"
+@model MyPhotos.Presentation.Pages.Places.PlacesModel
+@{
+    ViewData["Title"] = "Places";
+}
+
+<h1>Places</h1>
+
+
+@foreach (var entity in Model.Places)
+{
+    <div class="person-view">
+        <div>@entity.Id</div>
+        <div>@entity.Name</div>
+    </div>
+}

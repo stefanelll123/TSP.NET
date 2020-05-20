@@ -1,0 +1,22 @@
+﻿@page "/persons"
+@model MyPhotos.Presentation.Pages.Persons.PersonsModel
+@{
+    ViewData["Title"] = "Persons";
+}
+
+    <head>
+        <link href="@Url.Content("./Persons.css")" rel="stylesheet" type="text/css" />
+    </head>
+
+<h1>Persons</h1>
+
+@foreach (var person in Model.Persons)
+{
+<div class="person-view">
+    <div>@person.Id</div>
+    <div>@person.FirstName</div>
+    <div>@person.LastName</div>
+</div>
+}
+
+

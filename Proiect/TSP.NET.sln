@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPhotos.WcfServices.Host",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPhotos.Services.Gui", "MyPhotos.Services.Gui\MyPhotos.Services.Gui.csproj", "{0DCBD102-EDCA-4C18-9390-4547174E8828}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPhotos.Presentation", "MyPhotos.Presentation\MyPhotos.Presentation.csproj", "{9EADF44B-F765-4BEE-BFEB-621621FA9DC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{0DCBD102-EDCA-4C18-9390-4547174E8828}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DCBD102-EDCA-4C18-9390-4547174E8828}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DCBD102-EDCA-4C18-9390-4547174E8828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EADF44B-F765-4BEE-BFEB-621621FA9DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EADF44B-F765-4BEE-BFEB-621621FA9DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EADF44B-F765-4BEE-BFEB-621621FA9DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EADF44B-F765-4BEE-BFEB-621621FA9DC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +88,7 @@ Global
 		{FC6120CB-8054-486C-9FC6-FD584906EC44} = {B1F91AA9-596A-41D1-A051-821C4989FAAC}
 		{AED99A6B-FEC4-486F-A0F0-2E39CD7C999D} = {FC6120CB-8054-486C-9FC6-FD584906EC44}
 		{0DCBD102-EDCA-4C18-9390-4547174E8828} = {760C68C5-9DB0-416C-ADB1-35CC3D990CB5}
+		{9EADF44B-F765-4BEE-BFEB-621621FA9DC5} = {0621AAFA-CA01-431B-9778-6751104CB46F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0CFA3652-983B-4427-A35C-ACAC5D32BB61}

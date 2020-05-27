@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/MyPhotos.DataAccess.Model.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MyPhotos.DataAccess.Model.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Event">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Photos" nillable="true" type="tns:ArrayOfPhotos" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Event" nillable="true" type="tns:Event" />
+  <xs:complexType name="ArrayOfPhotos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Photos" nillable="true" type="tns:Photos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPhotos" nillable="true" type="tns:ArrayOfPhotos" />
+  <xs:complexType name="Photos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Event" nillable="true" type="tns:Event" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Path" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="People" nillable="true" type="tns:ArrayOfPerson" />
+      <xs:element minOccurs="0" name="Places" nillable="true" type="tns:ArrayOfPlaces" />
+      <xs:element minOccurs="0" name="Types" nillable="true" type="tns:ArrayOfType" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Photos" nillable="true" type="tns:Photos" />
+  <xs:complexType name="ArrayOfPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Person" nillable="true" type="tns:Person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerson" nillable="true" type="tns:ArrayOfPerson" />
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Photos" nillable="true" type="tns:ArrayOfPhotos" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="ArrayOfPlaces">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Places" nillable="true" type="tns:Places" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlaces" nillable="true" type="tns:ArrayOfPlaces" />
+  <xs:complexType name="Places">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Photos" nillable="true" type="tns:ArrayOfPhotos" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Places" nillable="true" type="tns:Places" />
+  <xs:complexType name="ArrayOfType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Type" nillable="true" type="tns:Type" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfType" nillable="true" type="tns:ArrayOfType" />
+  <xs:complexType name="Type">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Photos" nillable="true" type="tns:ArrayOfPhotos" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Type" nillable="true" type="tns:Type" />
+  <xs:complexType name="ArrayOfEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Event" nillable="true" type="tns:Event" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEvent" nillable="true" type="tns:ArrayOfEvent" />
+</xs:schema>

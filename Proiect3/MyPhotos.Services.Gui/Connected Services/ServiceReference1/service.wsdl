@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceImplementation" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/MyPhotos.DataAccess.Model.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceImplementation_AddEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddEvent" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_AddEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetAllEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEvents" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetAllEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetEventById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetEventById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_UpdateEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEvent" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_UpdateEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_DeleteEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEvent" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_DeleteEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_AddPerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPerson" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_AddPerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetAllPersons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPersons" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetAllPersons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPersonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetPersonById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetPersonById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_UpdatePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePerson" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_UpdatePerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_DeletePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePerson" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_DeletePerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_AddPhoto_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPhoto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_AddPhoto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetAllPhotos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPhotos" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetAllPhotos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPhotosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetPhotoById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhotoById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetPhotoById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhotoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_UpdatePhoto_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePhoto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_UpdatePhoto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_DeletePhoto_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePhoto" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_DeletePhoto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_AddPlace_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPlace" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_AddPlace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPlaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetAllPlaces_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPlaces" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetAllPlaces_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPlacesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetPlaceById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlaceById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetPlaceById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPlaceByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_UpdatePlace_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlace" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_UpdatePlace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_DeletePlace_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePlace" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_DeletePlace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePlaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_AddType_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddType" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_AddType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetAllTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTypes" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetAllTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetTypeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_GetTypeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_UpdateType_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateType" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_UpdateType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_DeleteType_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteType" />
+  </wsdl:message>
+  <wsdl:message name="IServiceImplementation_DeleteType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceImplementation">
+    <wsdl:operation name="AddEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/AddEvent" message="tns:IServiceImplementation_AddEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/AddEventResponse" message="tns:IServiceImplementation_AddEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/GetAllEvents" message="tns:IServiceImplementation_GetAllEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/GetAllEventsResponse" message="tns:IServiceImplementation_GetAllEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/GetEventById" message="tns:IServiceImplementation_GetEventById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/GetEventByIdResponse" message="tns:IServiceImplementation_GetEventById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/UpdateEvent" message="tns:IServiceImplementation_UpdateEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/UpdateEventResponse" message="tns:IServiceImplementation_UpdateEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/DeleteEvent" message="tns:IServiceImplementation_DeleteEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/DeleteEventResponse" message="tns:IServiceImplementation_DeleteEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/AddPerson" message="tns:IServiceImplementation_AddPerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/AddPersonResponse" message="tns:IServiceImplementation_AddPerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPersons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/GetAllPersons" message="tns:IServiceImplementation_GetAllPersons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/GetAllPersonsResponse" message="tns:IServiceImplementation_GetAllPersons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/GetPersonById" message="tns:IServiceImplementation_GetPersonById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/GetPersonByIdResponse" message="tns:IServiceImplementation_GetPersonById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/UpdatePerson" message="tns:IServiceImplementation_UpdatePerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/UpdatePersonResponse" message="tns:IServiceImplementation_UpdatePerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/DeletePerson" message="tns:IServiceImplementation_DeletePerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/DeletePersonResponse" message="tns:IServiceImplementation_DeletePerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPhoto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/AddPhoto" message="tns:IServiceImplementation_AddPhoto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/AddPhotoResponse" message="tns:IServiceImplementation_AddPhoto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhotos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/GetAllPhotos" message="tns:IServiceImplementation_GetAllPhotos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/GetAllPhotosResponse" message="tns:IServiceImplementation_GetAllPhotos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotoById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/GetPhotoById" message="tns:IServiceImplementation_GetPhotoById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/GetPhotoByIdResponse" message="tns:IServiceImplementation_GetPhotoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePhoto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/UpdatePhoto" message="tns:IServiceImplementation_UpdatePhoto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/UpdatePhotoResponse" message="tns:IServiceImplementation_UpdatePhoto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePhoto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/DeletePhoto" message="tns:IServiceImplementation_DeletePhoto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/DeletePhotoResponse" message="tns:IServiceImplementation_DeletePhoto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPlace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/AddPlace" message="tns:IServiceImplementation_AddPlace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/AddPlaceResponse" message="tns:IServiceImplementation_AddPlace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlaces">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/GetAllPlaces" message="tns:IServiceImplementation_GetAllPlaces_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/GetAllPlacesResponse" message="tns:IServiceImplementation_GetAllPlaces_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPlaceById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/GetPlaceById" message="tns:IServiceImplementation_GetPlaceById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/GetPlaceByIdResponse" message="tns:IServiceImplementation_GetPlaceById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/UpdatePlace" message="tns:IServiceImplementation_UpdatePlace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/UpdatePlaceResponse" message="tns:IServiceImplementation_UpdatePlace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePlace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/DeletePlace" message="tns:IServiceImplementation_DeletePlace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/DeletePlaceResponse" message="tns:IServiceImplementation_DeletePlace_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/AddType" message="tns:IServiceImplementation_AddType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/AddTypeResponse" message="tns:IServiceImplementation_AddType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/GetAllTypes" message="tns:IServiceImplementation_GetAllTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/GetAllTypesResponse" message="tns:IServiceImplementation_GetAllTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/GetTypeById" message="tns:IServiceImplementation_GetTypeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/GetTypeByIdResponse" message="tns:IServiceImplementation_GetTypeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/UpdateType" message="tns:IServiceImplementation_UpdateType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/UpdateTypeResponse" message="tns:IServiceImplementation_UpdateType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceImplementation/DeleteType" message="tns:IServiceImplementation_DeleteType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceImplementation/DeleteTypeResponse" message="tns:IServiceImplementation_DeleteType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceImplementation" type="tns:IServiceImplementation">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddEvent">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/AddEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEvents">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/GetAllEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventById">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/GetEventById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEvent">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/UpdateEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEvent">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/DeleteEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPerson">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/AddPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPersons">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/GetAllPersons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonById">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/GetPersonById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerson">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/UpdatePerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePerson">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/DeletePerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPhoto">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/AddPhoto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPhotos">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/GetAllPhotos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotoById">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/GetPhotoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePhoto">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/UpdatePhoto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePhoto">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/DeletePhoto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPlace">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/AddPlace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPlaces">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/GetAllPlaces" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPlaceById">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/GetPlaceById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlace">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/UpdatePlace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePlace">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/DeletePlace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddType">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/AddType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTypes">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/GetAllTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeById">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/GetTypeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateType">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/UpdateType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteType">
+      <soap:operation soapAction="http://tempuri.org/IServiceImplementation/DeleteType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceImplementation">
+    <wsdl:port name="BasicHttpBinding_IServiceImplementation" binding="tns:BasicHttpBinding_IServiceImplementation">
+      <soap:address location="http://localhost:8000/PC" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

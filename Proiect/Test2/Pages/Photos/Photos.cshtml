@@ -1,0 +1,16 @@
+﻿@page "/photos"
+@model MyPhotos.Presentation.Pages.Photos.PhotosModel
+@{
+    ViewData["Title"] = "Photos";
+}
+
+<h1>Photos</h1>
+
+@foreach (var photo in Model.Photos)
+{
+    <div class="person-view">
+        <div>@photo.Id</div>
+        <div>@photo.Name</div>
+        <img class="photo" src="./training.jpg" alt="@photo.Name" />
+    </div>
+}

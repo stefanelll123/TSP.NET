@@ -1,0 +1,15 @@
+﻿@page "/events"
+@model MyPhotos.Presentation.Pages.Events.EventsModel
+@{
+    ViewData["Title"] = "Events";
+}
+
+<h1>Events</h1>
+
+@foreach (var entity in Model.Events)
+{
+    <div class="person-view">
+        <div>@entity.Id</div>
+        <div>@entity.Name</div>
+    </div>
+}

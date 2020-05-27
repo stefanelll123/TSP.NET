@@ -1,0 +1,16 @@
+﻿@page "/types"
+@model MyPhotos.Presentation.Pages.Types.TypesModel
+@{
+    ViewData["Title"] = "Types";
+}
+
+<h1>Types</h1>
+
+
+@foreach (var types in Model.Types)
+{
+    <div class="person-view">
+        <div>@types.Id</div>
+        <div>@types.Name</div>
+    </div>
+}
